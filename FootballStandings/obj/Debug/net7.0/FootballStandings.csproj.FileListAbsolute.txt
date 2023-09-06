@@ -1,0 +1,14 @@
+C:\Users\kutuk\Football standings\FootballStandings\bin\Debug\net7.0\FootballStandings.exe
+C:\Users\kutuk\Football standings\FootballStandings\bin\Debug\net7.0\FootballStandings.deps.json
+C:\Users\kutuk\Football standings\FootballStandings\bin\Debug\net7.0\FootballStandings.runtimeconfig.json
+C:\Users\kutuk\Football standings\FootballStandings\bin\Debug\net7.0\FootballStandings.dll
+C:\Users\kutuk\Football standings\FootballStandings\bin\Debug\net7.0\FootballStandings.pdb
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.AssemblyInfoInputs.cache
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.AssemblyInfo.cs
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.csproj.CoreCompileInputs.cache
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.dll
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\refint\FootballStandings.dll
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.pdb
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.genruntimeconfig.cache
+C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\ref\FootballStandings.dll
