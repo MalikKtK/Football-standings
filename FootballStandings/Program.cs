@@ -5,7 +5,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        string filePath = @"C:\Users\kutuk\Football standings\FootballStandings\Data\teams.csv";
+string filePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\Data\teams.csv";
+
+
+
 
         List<Team> teams = FootballCsvReader.ReadCsv(filePath);
 

@@ -3,3 +3,38 @@ C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballSta
 C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.AssemblyInfoInputs.cache
 C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.AssemblyInfo.cs
 C:\Users\kutuk\Football standings\FootballStandings\obj\Debug\net7.0\FootballStandings.csproj.CoreCompileInputs.cache
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\FootballStandings.exe
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\FootballStandings.deps.json
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\FootballStandings.runtimeconfig.json
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\FootballStandings.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\FootballStandings.pdb
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\CsvHelper.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\cs\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\it\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\ko\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\pl\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\pt-BR\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.csproj.AssemblyReference.cache
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.AssemblyInfoInputs.cache
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.AssemblyInfo.cs
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.csproj.CoreCompileInputs.cache
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.sourcelink.json
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.csproj.CopyComplete
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\refint\FootballStandings.dll
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.pdb
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\FootballStandings.genruntimeconfig.cache
+C:\Users\kutuk\hey\Football-standings\Footballstandings\obj\Debug\net7.0\ref\FootballStandings.dll

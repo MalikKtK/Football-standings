@@ -1,22 +1,51 @@
+using System;
+using System.IO;
+
 public class LeagueSetup
 {
     public string LeagueName { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public string Location { get; set; }
-    public int NumberOfTeams { get; set; }
+    public int PromoteToChampionsLeague { get; set; }
+    public int PromoteToEuropeLeague { get; set; }
+    public int PromoteToConferenceLeague { get; set; }
+    public int PromoteToUpperLeague { get; set; }
+    public int RelegateToLowerLeague { get; set; }
 
-
-    public LeagueSetup(string leagueName, DateTime startDate, DateTime endDate, string location, int numberOfTeams)
+    public LeagueSetup(string leagueName, int promoteToChampionsLeague, int promoteToEuropeLeague, 
+                       int promoteToConferenceLeague, int promoteToUpperLeague, int relegateToLowerLeague)
     {
         LeagueName = leagueName;
-        StartDate = startDate;
-        EndDate = endDate;
-        Location = location;
-        NumberOfTeams = numberOfTeams;
+        PromoteToChampionsLeague = promoteToChampionsLeague;
+        PromoteToEuropeLeague = promoteToEuropeLeague;
+        PromoteToConferenceLeague = promoteToConferenceLeague;
+        PromoteToUpperLeague = promoteToUpperLeague;
+        RelegateToLowerLeague = relegateToLowerLeague;
     }
 
-    public LeagueSetup()
+    // Add a method to parse setup.csv
+    public static LeagueSetup ParseSetupCsv(string filePath)
     {
+        try
+        {
+            string[] lines = File.ReadAllLines(filePath);
+
+            if (lines.Length < 6)
+            {
+                throw new Exception("Invalid setup.csv format. Missing data.");
+            }
+
+            return new LeagueSetup(
+                lines[0], 
+                int.Parse(lines[1]), 
+                int.Parse(lines[2]), 
+                int.Parse(lines[3]), 
+                int.Parse(lines[4]), 
+                int.Parse(lines[5])
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error parsing setup.csv: {ex.Message}");
+            return null;
+        }
     }
 }

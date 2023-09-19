@@ -256,11 +256,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kutuk\\Football standings\\FootballStandings\\FootballStandings.csproj",
+      "projectUniqueName": "C:\\Users\\kutuk\\hey\\Football-standings\\FootballStandings\\FootballStandings.csproj",
       "projectName": "FootballStandings",
-      "projectPath": "C:\\Users\\kutuk\\Football standings\\FootballStandings\\FootballStandings.csproj",
+      "projectPath": "C:\\Users\\kutuk\\hey\\Football-standings\\FootballStandings\\FootballStandings.csproj",
       "packagesPath": "C:\\Users\\kutuk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kutuk\\Football standings\\FootballStandings\\obj\\",
+      "outputPath": "C:\\Users\\kutuk\\hey\\Football-standings\\FootballStandings\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kutuk\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -311,12 +311,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.11, 7.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.11, 7.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.11, 7.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.11, 7.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23455.8\\RuntimeIdentifierGraph.json"
       }
     }
   }
