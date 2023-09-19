@@ -26,20 +26,32 @@ public class LeagueStandings
         return orderedStandings;
     }
 
-    public void PrintStandings()
+public void PrintStandings()
+{
+    var standings = CalculateStandings();
+
+    Console.WriteLine("League Standings:");
+    Console.WriteLine("{0,-5} {1,-25} {2,-10} {3,-10} {4,-10} {5,-10} {6,-10} {7,-10} {8,-10} {9,-10} {10,-10}",
+                      "Pos", "Team", "Pts", "GP", "W", "D", "L", "GF", "GA", "GD", "Streak");
+
+    foreach (var team in standings)
     {
-        var standings = CalculateStandings();
+        string specialMarking = "";
 
-        Console.WriteLine("League Standings:");
-        Console.WriteLine("{0,-5} {1,-25} {2,-10} {3,-10} {4,-10} {5,-10} {6,-10} {7,-10} {8,-10} {9,-10} {10,-10}",
-                          "Pos", "Team", "Pts", "GP", "W", "D", "L", "GF", "GA", "GD", "Streak");
+        // Add special marking for CL, EL, EC qualification
+        if (team.Position <= 1)
+            specialMarking = "(CL)";
+        else if (team.Position <= 3)
+            specialMarking = "(EL)";
+        else if (team.Position <= 6)
+            specialMarking = "(EC)";
 
-        foreach (var team in standings)
-        {
-            Console.WriteLine("{0,-5} {1,-25} {2,-10} {3,-10} {4,-10} {5,-10} {6,-10} {7,-10} {8,-10} {9,-10} {10,-10}",
-                              team.Position, team.FullName, team.Points, team.GamesPlayed,
-                              team.GamesWon, team.GamesDrawn, team.GamesLost, team.GoalsFor,
-                              team.GoalsAgainst, team.GoalDifference, team.CurrentStreak);
-        }
+        // Add coloring for relegation-threatened teams
+        string textColor = "white";
+        if (team.Position >= teams.Count - 1)
+            textColor = "red";
+
+        Console.WriteLine($"<color={textColor}>{team.Position,-5} {specialMarking} {team.FullName,-25} {team.Points,-10} {team.GamesPlayed,-10} {team.GamesWon,-10} {team.GamesDrawn,-10} {team.GamesLost,-10} {team.GoalsFor,-10} {team.GoalsAgainst,-10} {team.GoalDifference,-10} {team.CurrentStreak,-10}</color>");
     }
+}
 }
