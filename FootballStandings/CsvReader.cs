@@ -1,36 +1,52 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using CsvHelper;
-using CsvHelper.Configuration;
+using Microsoft.VisualBasic.FileIO;
 
-public class CsvReader<T>
+public class FootballCsvReader
 {
-    private readonly string filePath;
-
-    public CsvReader(string filePath)
+    public static List<Team> ReadCsv(string filePath)
     {
-        this.filePath = filePath;
-    }
+        List<Team> teams = new List<Team>();
 
-    public List<T> ReadCsv()
-    {
-        var records = new List<T>();
-
-        try
+        using (TextFieldParser parser = new TextFieldParser(filePath))
         {
-            using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
+            parser.TextFieldType = FieldType.Delimited;
+            parser.SetDelimiters(",");
+
+            // Skip the header line
+            parser.ReadLine();
+
+            while (!parser.EndOfData)
             {
-                records = csv.GetRecords<T>().ToList();
+                string[] fields = parser.ReadFields();
+
+                if (fields.Length != 12)
+                {
+                    Console.WriteLine($"Skipping invalid line: {string.Join(",", fields)}");
+                    continue;
+                }
+
+                Team team = new Team
+                {
+                    Abbreviation = fields[0],
+                    FullName = fields[1],
+                    SpecialRanking = fields[2],
+                    Position = int.Parse(fields[3]),
+                    GamesPlayed = int.Parse(fields[4]),
+                    GamesWon = int.Parse(fields[5]),
+                    GamesDrawn = int.Parse(fields[6]),
+                    GamesLost = int.Parse(fields[7]),
+                    GoalsFor = int.Parse(fields[8]),
+                    GoalsAgainst = int.Parse(fields[9]),
+                    Points = int.Parse(fields[10]),
+                    CurrentStreak = fields[11]
+                };
+
+                teams.Add(team);
             }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error reading CSV: {ex.Message}");
-        }
 
-        return records;
+        return teams;
     }
 }

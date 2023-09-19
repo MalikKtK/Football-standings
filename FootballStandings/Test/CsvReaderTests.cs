@@ -1,23 +1,25 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.IO;
 
 [TestClass]
-public class CsvReaderTest
+public class CsvReaderTests
 {
-    [TestMethod]
-    public void ReadTeamsCsv_ShouldReturnListOfTeams()
-    {
-        // Arrange
-var teamCsvFilePath = @"C:\Users\kutuk\Football-standings-1\FootballStandings\Data\teams.csv";
-        var csvReader = new CsvReader<Team>(teamCsvFilePath);
+    private const string FilePath = @"C:\Users\kutuk\Football standings\FootballStandings\Data\teams.csv";
 
-        // Act
-        List<Team> teams = csvReader.ReadCsv();
+[TestMethod]
+public void ReadCsv_ShouldReturnListOfTeams()
+{
+    // Arrange
+    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "teams.csv");
+    var csvReader = new CsvReader<Team>(filePath);
 
-        // Assert
-        Assert.IsNotNull(teams);
-        Assert.IsTrue(teams.Count > 0);
-    }
+    // Act
+    List<Team> teams = csvReader.ReadCsv();
 
-    // Add more test methods for other CSV files and data models as needed
+    // Assert
+    Assert.IsNotNull(teams);
+    Assert.IsTrue(teams.Count > 0);
+}
+
 }
