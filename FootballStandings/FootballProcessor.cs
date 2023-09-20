@@ -49,32 +49,32 @@ public class FootballProcessor
         // Update the current streak for both teams
         UpdateStreak(homeTeam, awayTeam, matchResult);
 
-        // You may need to add more logic based on your specific requirements
     }
 
-    private void UpdatePoints(Team homeTeam, Team awayTeam, MatchResult matchResult)
+   private void UpdatePoints(Team homeTeam, Team awayTeam, MatchResult matchResult)
+{
+    // Add your logic to calculate points based on match result
+    if (matchResult.HomeTeamGoals > matchResult.AwayTeamGoals)
     {
-        // Add your logic to calculate points based on match result
-        if (matchResult.HomeTeamGoals > matchResult.AwayTeamGoals)
-        {
-            homeTeam.Points += 3; // Home team wins
-            homeTeam.GamesWon++;
-            awayTeam.GamesLost++;
-        }
-        else if (matchResult.HomeTeamGoals < matchResult.AwayTeamGoals)
-        {
-            awayTeam.Points += 3; // Away team wins
-            awayTeam.GamesWon++;
-            homeTeam.GamesLost++;
-        }
-        else
-        {
-            homeTeam.Points += 1; // It's a draw
-            awayTeam.Points += 1;
-            homeTeam.GamesDrawn++;
-            awayTeam.GamesDrawn++;
-        }
+        homeTeam.Points += 3; // Home team wins
+        homeTeam.GamesWon++;
+        awayTeam.GamesLost++;
     }
+    else if (matchResult.HomeTeamGoals < matchResult.AwayTeamGoals)
+    {
+        awayTeam.Points += 3; // Away team wins
+        awayTeam.GamesWon++;
+        homeTeam.GamesLost++;
+    }
+    else
+    {
+        homeTeam.Points += 1; // It's a draw
+        awayTeam.Points += 1;
+        homeTeam.GamesDrawn++;
+        awayTeam.GamesDrawn++;
+    }
+}
+
     private void CalculateStandings()
 {
     var orderedStandings = teams.OrderByDescending(team => team.Points)
@@ -99,70 +99,110 @@ private void UpdateStreak(Team homeTeam, Team awayTeam, MatchResult matchResult)
     // Update home team's streak
     if (homeTeamWon)
     {
-        // Home team won, update the streak
         homeTeam.CurrentStreak.Wins++;
+        awayTeam.CurrentStreak.Losses = 0; // Reset away team's loss streak
+        awayTeam.CurrentStreak.Draws = 0;  // Reset away team's draw streak
     }
     else if (isDraw)
     {
-        // It's a draw for the home team, update the streak
         homeTeam.CurrentStreak.Draws++;
+        awayTeam.CurrentStreak.Draws++;
+        homeTeam.CurrentStreak.Wins = 0;   // Reset home team's win streak
+        awayTeam.CurrentStreak.Wins = 0;   // Reset away team's win streak
+        homeTeam.CurrentStreak.Losses = 0; // Reset home team's loss streak
+        awayTeam.CurrentStreak.Losses = 0; // Reset away team's loss streak
     }
     else
     {
-        // Home team lost, update the streak
         homeTeam.CurrentStreak.Losses++;
+        awayTeam.CurrentStreak.Wins = 0;   // Reset away team's win streak
+        awayTeam.CurrentStreak.Draws = 0;  // Reset away team's draw streak
     }
 
     // Update away team's streak
     if (awayTeamWon)
     {
-        // Away team won, update the streak
         awayTeam.CurrentStreak.Wins++;
+        homeTeam.CurrentStreak.Losses = 0; // Reset home team's loss streak
+        homeTeam.CurrentStreak.Draws = 0;  // Reset home team's draw streak
     }
     else if (isDraw)
     {
-        // It's a draw for the away team, update the streak
         awayTeam.CurrentStreak.Draws++;
+        homeTeam.CurrentStreak.Draws++;
+        awayTeam.CurrentStreak.Wins = 0;   // Reset away team's win streak
+        homeTeam.CurrentStreak.Wins = 0;   // Reset home team's win streak
+        awayTeam.CurrentStreak.Losses = 0; // Reset away team's loss streak
+        homeTeam.CurrentStreak.Losses = 0; // Reset home team's loss streak
     }
     else
     {
-        // Away team lost, update the streak
         awayTeam.CurrentStreak.Losses++;
+        homeTeam.CurrentStreak.Wins = 0;   // Reset home team's win streak
+        homeTeam.CurrentStreak.Draws = 0;  // Reset home team's draw streak
     }
 }
 
-
- public void DisplayCurrentStandings()
-{
-    var orderedStandings = teams.OrderByDescending(team => team.Points)
-                                .ThenByDescending(team => team.GoalDifference)
-                                .ThenByDescending(team => team.GoalsFor)
-                                .ToList();
-
-    Console.WriteLine("League Standings:");
-    Console.WriteLine("{0,-5} {1,-25} {2,-10} {3,-10} {4,-10} {5,-10} {6,-10} {7,-10} {8,-10} {9,-10} {10,-10}",
-                      "Pos", "Team", "Pts", "GP", "W", "D", "L", "GF", "GA", "GD", "Streak");
-
-    foreach (var team in orderedStandings)
+   public void DisplayCurrentStandings()
     {
-        string specialMarking = "";
+        var orderedStandings = teams.OrderByDescending(team => team.Points)
+                                    .ThenByDescending(team => team.GoalDifference)
+                                    .ThenByDescending(team => team.GoalsFor)
+                                    .ToList();
 
-        // Add special marking for CL, EL, EC qualification
-        if (team.Position <= leagueSetup.PromoteToChampionsLeague)
-            specialMarking = "(CL)";
-        else if (team.Position <= (leagueSetup.PromoteToChampionsLeague + leagueSetup.PromoteToEuropeLeague))
-            specialMarking = "(EL)";
-        else if (team.Position <= (leagueSetup.PromoteToChampionsLeague + leagueSetup.PromoteToEuropeLeague + leagueSetup.PromoteToConferenceLeague))
-            specialMarking = "(EC)";
+        Console.WriteLine("League Standings:");
+        Console.WriteLine("{0,-5} {1,-30} {2,-5} {3,-5} {4,-5} {5,-5} {6,-5} {7,-5} {8,-5} {9,-5} {10,-15}",
+                          "Pos", "Team", "Pts", "GP", "W", "D", "L", "GF", "GA", "GD", "Streak");
 
-        // Add coloring for relegation-threatened teams
-        string textColor = "white";
-        if (team.Position >= teams.Count - leagueSetup.RelegateToLowerLeague)
-            textColor = "red";
+        for (int i = 0; i < orderedStandings.Count; i++)
+        {
+            var team = orderedStandings[i];
+            string specialMarking = GetSpecialMarking(i + 1);
+            string textColor = GetTextColor(i + 1);
 
-        string streakText = $"Wins: {team.CurrentStreak.Wins}, Draws: {team.CurrentStreak.Draws}, Losses: {team.CurrentStreak.Losses}";
-        Console.WriteLine($"<color={textColor}>{team.Position,-5} {specialMarking} {team.FullName,-25} {team.Points,-10} {team.GamesPlayed,-10} {team.GamesWon,-10} {team.GamesDrawn,-10} {team.GamesLost,-10} {team.GoalsFor,-10} {team.GoalsAgainst,-10} {team.GoalDifference,-10} {streakText,-10}</color>");
+            string streakText = $"Wins: {team.CurrentStreak.Wins}, Draws: {team.CurrentStreak.Draws}, Losses: {team.CurrentStreak.Losses}";
+
+            Console.Write("\u001b[0m"); // Reset color
+            Console.Write($"\u001b[{textColor}m"); // Set text color
+
+            // Ensure the team name is not cut off
+            string teamName = $"{team.Position} {specialMarking} {team.FullName}";
+            if (teamName.Length > 30)
+            {
+                teamName = teamName.Substring(0, 27) + "...";
+            }
+            else
+            {
+                teamName = teamName.PadRight(30);
+            }
+
+            Console.WriteLine($"{teamName,-30} {team.Points,-5} {team.GamesPlayed,-5} {team.GamesWon,-5} {team.GamesDrawn,-5} {team.GamesLost,-5} {team.GoalsFor,-5} {team.GoalsAgainst,-5} {team.GoalDifference,-5} {streakText,-15}");
+
+            Console.Write("\u001b[0m"); // Reset color
+        }
     }
+
+private string GetSpecialMarking(int position)
+{
+    if (position <= leagueSetup.PromoteToChampionsLeague)
+        return "(CL)";
+    if (position <= (leagueSetup.PromoteToChampionsLeague + leagueSetup.PromoteToEuropeLeague))
+        return "(EL)";
+    if (position <= (leagueSetup.PromoteToChampionsLeague + leagueSetup.PromoteToEuropeLeague + leagueSetup.PromoteToConferenceLeague))
+        return "(EC)";
+    return "";
+}
+
+private string GetTextColor(int position)
+{
+    if (position == 1)
+        return "32"; // Green for first place
+    if (position <= leagueSetup.PromoteToChampionsLeague)
+        return "36"; // Cyan for qualification places
+    if (position >= teams.Count - leagueSetup.RelegateToLowerLeague)
+        return "31"; // Red for relegation-threatened teams
+    return "0"; // Default color
 }
 
 }
+
