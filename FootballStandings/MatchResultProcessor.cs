@@ -29,8 +29,15 @@ public class MatchResultProcessor
 
                 string homeTeam = fields[0];
                 string awayTeam = fields[1];
-                int homeTeamGoals = int.Parse(fields[2]);
-                int awayTeamGoals = int.Parse(fields[3]);
+
+                // Split and parse the goal values
+                string[] goalValues = fields[2].Split('-');
+                if (goalValues.Length != 2 || !int.TryParse(goalValues[0], out int homeTeamGoals) || !int.TryParse(goalValues[1], out int awayTeamGoals))
+                {
+                    Console.WriteLine($"Skipping invalid goal values: {fields[2]}");
+                    continue;
+                }
+
                 string matchDate = fields[4];
 
                 // You can add stadium information if needed

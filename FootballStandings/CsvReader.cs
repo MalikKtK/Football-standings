@@ -42,7 +42,33 @@ public class FootballCsvReader
                     team.GoalsFor = int.Parse(fields[8]);
                     team.GoalsAgainst = int.Parse(fields[9]);
                     team.Points = int.Parse(fields[10]);
-                    team.CurrentStreak = fields.Length > 11 ? fields[11] : string.Empty;
+
+                    // Parse the CurrentStreak property correctly
+                    string streak = fields[11];
+                    if (!string.IsNullOrEmpty(streak) && streak.Length >= 2)
+                    {
+                        char streakResult = streak[0];
+                        int streakValue = int.Parse(streak.Substring(1));
+
+                        if (streakResult == 'W')
+                        {
+                            team.CurrentStreak = new Team.Streak { Wins = streakValue };
+                        }
+                        else if (streakResult == 'D')
+                        {
+                            team.CurrentStreak = new Team.Streak { Draws = streakValue };
+                        }
+                        else if (streakResult == 'L')
+                        {
+                            team.CurrentStreak = new Team.Streak { Losses = streakValue };
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where the streak value is not in the expected format
+                        // You can set a default streak or handle it as needed.
+                        team.CurrentStreak = new Team.Streak(); // Default streak with 0 wins, draws, and losses
+                    }
 
                     teams.Add(team);
                 }
