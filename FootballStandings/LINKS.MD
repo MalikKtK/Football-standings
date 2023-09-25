@@ -8,6 +8,11 @@ https://www.flashscore.com/football/denmark/superliga/results/ (Brugte disse lin
 
 https://chat.openai.com/
 (Brugte vi mere eller mindre hvis vi havde småfejl til at se, hvordan vi kunne fixe det. Eksempelvis brugt i vores Program.cs til at hjælpe os med at få menuen frem, footballprocessor til at fixe vores standing, den stod nemlig mærkeligt. Brugt til vores csv filer til at hjælpe os med at fikse vores opbygning samt brugt i vores csvreaderes, da vi havde svært ved at læse filerne til at starte med, da vi ikke havde alle værdierne med ind.)
+https://chat.openai.com/share/aa6b5463-0d06-45d5-8ecf-57464d0bd0f2
+ (Vi sendte stort set hele projektet til chatGPT, for at hjælpe os med at opfange hvordan vi kunne lave vores csv FILER om. Men da dette ikke hjalp os, blev vi nød til manualt gå ind på superligaen, tilføje kampene i CSV filer og rette dem til så det passede med dem.)
+ https://chat.openai.com/share/c86ee413-f6c1-4c02-9b09-0811dfaf7895 
+ https://chat.openai.com/share/f780d87c-3a03-4ff1-9485-c5d28a282ee1
+ (Et andet problem der opstod var vores CSVREADER. Vi kæmpede med denne.)
 
 https://csharp.hotexamples.com/examples/FootballLeague/Match/-/php-match-class-examples.html
 https://github.com/magmasystems/soccerstandings (Brugte inspiration til hvordan vi eventuelt kunne starte)
