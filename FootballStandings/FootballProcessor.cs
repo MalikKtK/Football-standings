@@ -119,19 +119,12 @@ public class FootballProcessor
         bool awayTeamWon = matchResult.AwayTeamGoals > matchResult.HomeTeamGoals;
         bool isDraw = matchResult.HomeTeamGoals == matchResult.AwayTeamGoals;
 
-        Console.WriteLine($"Match: {homeTeam.FullName} vs. {awayTeam.FullName}");
-        Console.WriteLine($"Home Team Won: {homeTeamWon}");
-        Console.WriteLine($"Away Team Won: {awayTeamWon}");
-        Console.WriteLine($"Is Draw: {isDraw}");
-
         UpdateStreakForTeam(homeTeam, homeTeamWon, isDraw);
         UpdateStreakForTeam(awayTeam, awayTeamWon, isDraw);
     }
 
     private void UpdateStreakForTeam(Team team, bool won, bool isDraw)
     {
-        Console.WriteLine($"Updating streak for {team.FullName}");
-
         if (won)
         {
             team.CurrentStreak.Wins++;
