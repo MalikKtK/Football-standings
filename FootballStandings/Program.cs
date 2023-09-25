@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         // Load setup data from setup.csv
-       string setupFilePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\Data\setup.csv";
+       string setupFilePath = @"C:\Users\ebus\Desktop\C#\FootballStandings\Football-standings\FootballStandings\Data\setup.csv";
 LeagueSetup leagueSetup = LeagueSetup.ParseSetupCsv(setupFilePath);
 
 
@@ -17,7 +17,7 @@ LeagueSetup leagueSetup = LeagueSetup.ParseSetupCsv(setupFilePath);
         }
 
         // Load team data from teams.csv
-string teamFilePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\Data\teams.csv";
+string teamFilePath = @"C:\Users\ebus\Desktop\C#\FootballStandings\Football-standings\FootballStandings\Data\teams.csv";
         List<Team> teams = FootballCsvReader.ReadCsv(teamFilePath);
 
         if (teams == null)
@@ -36,7 +36,8 @@ string teamFilePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\
             Console.WriteLine("1. Print Teams");
             Console.WriteLine("2. Run Matches");
             Console.WriteLine("3. Display Current League Standings");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Simulate all matches");
+            Console.WriteLine("5. Exit");
             Console.Write("Enter your choice: ");
 
             if (int.TryParse(Console.ReadLine(), out int choice))
@@ -87,6 +88,35 @@ string teamFilePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\
                         break;
 
                     case 4:
+                    // Simulation af alle kampe
+                    // Test om det virker
+                    Console.Write("Simulate all matches? (y/n): ");
+                    string simulateAllMatches = Console.ReadLine();
+
+                    if (simulateAllMatches.ToLower() == "y") {
+                        //"Data" for alle .csv filer
+                        string dataDirectory = "Data";
+                        string[] roundFiles = Directory.GetFiles(dataDirectory, "round-*.csv");
+
+                    if (roundFiles.Length == 0){
+
+                    Console.WriteLine("No round files found in the 'Data' directory.");
+                    }
+                    else {
+                        
+                        foreach (string currentRoundFilePath in roundFiles) {
+                            processor.ProcessRoundResults(currentRoundFilePath);
+                            Console.WriteLine($"Matches in {Path.GetFileName(currentRoundFilePath)} have been processed.");
+                            }
+                        }
+                    }
+                    else {
+                        Console.WriteLine("Simulation canceled.");
+                    }
+                        break;
+   
+
+                    case 5:
                         // Exit the application
                         exit = true;
                         break;
