@@ -33,6 +33,37 @@ public class FootballProcessor
         CalculateStandings();
     }
 
+    public void GenerateRandomScores(string roundFilePath)
+    {
+        List<string> lines = new List<string>();
+        using (StreamReader reader = new StreamReader(roundFilePath))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                lines.Add(line);
+            }
+        }
+
+        Random random = new Random();
+        for (int i = 1; i < lines.Count; i++)
+        {
+            string[] parts = lines[i].Split(',');
+            int homeGoals = random.Next(0, 5);
+            int awayGoals = random.Next(0, 5);
+            parts[2] = $"{homeGoals}-{awayGoals}";
+            lines[i] = string.Join(",", parts);
+        }
+
+        using (StreamWriter writer = new StreamWriter(roundFilePath))
+        {
+            foreach (string line in lines)
+            {
+                writer.WriteLine(line);
+            }
+        }
+    }
+
     private void UpdateTeamStatistics(Team homeTeam, Team awayTeam, MatchResult matchResult)
     {
         homeTeam.GamesPlayed++;
@@ -82,45 +113,44 @@ public class FootballProcessor
         }
     }
 
- private void UpdateStreak(Team homeTeam, Team awayTeam, MatchResult matchResult)
-{
-    bool homeTeamWon = matchResult.HomeTeamGoals > matchResult.AwayTeamGoals;
-    bool awayTeamWon = matchResult.AwayTeamGoals > matchResult.HomeTeamGoals;
-    bool isDraw = matchResult.HomeTeamGoals == matchResult.AwayTeamGoals;
-
-    Console.WriteLine($"Match: {homeTeam.FullName} vs. {awayTeam.FullName}");
-    Console.WriteLine($"Home Team Won: {homeTeamWon}");
-    Console.WriteLine($"Away Team Won: {awayTeamWon}");
-    Console.WriteLine($"Is Draw: {isDraw}");
-
-    UpdateStreakForTeam(homeTeam, homeTeamWon, isDraw);
-    UpdateStreakForTeam(awayTeam, awayTeamWon, isDraw);
-}
-
-private void UpdateStreakForTeam(Team team, bool won, bool isDraw)
-{
-    Console.WriteLine($"Updating streak for {team.FullName}");
-    
-    if (won)
+    private void UpdateStreak(Team homeTeam, Team awayTeam, MatchResult matchResult)
     {
-        team.CurrentStreak.Wins++;
-        team.CurrentStreak.Draws = 0;
-        team.CurrentStreak.Losses = 0;
-    }
-    else if (isDraw)
-    {
-        team.CurrentStreak.Draws++;
-        team.CurrentStreak.Wins = 0;
-        team.CurrentStreak.Losses = 0;
-    }
-    else
-    {
-        team.CurrentStreak.Losses++;
-        team.CurrentStreak.Wins = 0;
-        team.CurrentStreak.Draws = 0;
-    }
-}
+        bool homeTeamWon = matchResult.HomeTeamGoals > matchResult.AwayTeamGoals;
+        bool awayTeamWon = matchResult.AwayTeamGoals > matchResult.HomeTeamGoals;
+        bool isDraw = matchResult.HomeTeamGoals == matchResult.AwayTeamGoals;
 
+        Console.WriteLine($"Match: {homeTeam.FullName} vs. {awayTeam.FullName}");
+        Console.WriteLine($"Home Team Won: {homeTeamWon}");
+        Console.WriteLine($"Away Team Won: {awayTeamWon}");
+        Console.WriteLine($"Is Draw: {isDraw}");
+
+        UpdateStreakForTeam(homeTeam, homeTeamWon, isDraw);
+        UpdateStreakForTeam(awayTeam, awayTeamWon, isDraw);
+    }
+
+    private void UpdateStreakForTeam(Team team, bool won, bool isDraw)
+    {
+        Console.WriteLine($"Updating streak for {team.FullName}");
+
+        if (won)
+        {
+            team.CurrentStreak.Wins++;
+            team.CurrentStreak.Draws = 0;
+            team.CurrentStreak.Losses = 0;
+        }
+        else if (isDraw)
+        {
+            team.CurrentStreak.Draws++;
+            team.CurrentStreak.Wins = 0;
+            team.CurrentStreak.Losses = 0;
+        }
+        else
+        {
+            team.CurrentStreak.Losses++;
+            team.CurrentStreak.Wins = 0;
+            team.CurrentStreak.Draws = 0;
+        }
+    }
 
     public void DisplayCurrentStandings()
     {
