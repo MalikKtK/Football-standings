@@ -1,29 +1,17 @@
 public class Team
 {
     public string Abbreviation { get; set; }
-
     public string FullName { get; set; }
-
     public string SpecialRanking { get; set; }
-
     public int Position { get; set; }
-
     public int GamesPlayed { get; set; }
-
     public int GamesWon { get; set; }
-
     public int GamesDrawn { get; set; }
-
     public int GamesLost { get; set; }
-
     public int GoalsFor { get; set; }
-
     public int GoalsAgainst { get; set; }
-
     public int GoalDifference => GoalsFor - GoalsAgainst;
-
     public int Points { get; set; }
-
     public Streak CurrentStreak { get; set; } // Add a Streak property
 
     // Parameterless constructor
@@ -54,9 +42,9 @@ public class Team
         public int Draws { get; set; }
         public int Losses { get; set; }
     }
-  public override string ToString()
-{
-    return $"Wins: {CurrentStreak.Wins}, Draws: {CurrentStreak.Draws}, Losses: {CurrentStreak.Losses}";
-}
 
+    public override string ToString()
+    {
+        return $"Wins: {CurrentStreak.Wins}, Draws: {CurrentStreak.Draws}, Losses: {CurrentStreak.Losses}";
+    }
 }
