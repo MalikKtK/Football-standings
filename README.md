@@ -1,6 +1,6 @@
 # Football Standing
 
-Dette er vores første Mandatory projekt for C#. Vi har et dansk superliga, som indeholder 12 hold. Hvert år bliver der spillet cirka 22 kampe pr. hold (2 kampe mod alle hold).
+Dette er vores første Obligatoriske projekt for C#. Vi har et dansk superliga, som indeholder 12 hold. Hvert år bliver der spillet cirka 22 kampe pr. hold (2 kampe mod alle hold).
 
 I slutningen af sæsonnen vil det være det hold med mest points, der både vinder supaligaen og videre til championsleague. Derefter er de to næste hold i tabellen videre til El, som står for Europa League og derefter er de tre næste kvalificeret til Europa Cup. De tre sidste hold i tabellen er til nedrykning fra super ligaen. 
 
