@@ -6,8 +6,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Specify the data directory
+        string dataDirectory = "Data";
+
         // Load setup data from setup.csv
-        string setupFilePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\Data\setup.csv";
+        string setupFileName = "setup.csv";
+        string setupFilePath = Path.Combine(dataDirectory, setupFileName);
         LeagueSetup leagueSetup = LeagueSetup.ParseSetupCsv(setupFilePath);
 
         if (leagueSetup == null)
@@ -17,7 +21,8 @@ class Program
         }
 
         // Load team data from teams.csv
-        string teamFilePath = @"C:\Users\kutuk\hey\Football-standings\FootballStandings\Data\teams.csv";
+        string teamFileName = "teams.csv";
+        string teamFilePath = Path.Combine(dataDirectory, teamFileName);
         List<Team> teams = FootballCsvReader.ReadCsv(teamFilePath);
 
         if (teams == null)
@@ -58,7 +63,7 @@ class Program
                         // Implement logic to run matches based on round files
                         Console.Write("Enter the round file name (e.g., round-1.csv): ");
                         string roundFileName = Console.ReadLine();
-                        string roundFilePath = Path.Combine("Data", roundFileName);
+                        string roundFilePath = Path.Combine(dataDirectory, roundFileName);
 
                         if (File.Exists(roundFilePath))
                         {
@@ -89,8 +94,6 @@ class Program
 
                         if (simulateAllMatches.ToLower() == "y")
                         {
-                            //"Data" for alle .csv filer
-                            string dataDirectory = "Data";
                             string[] roundFiles = Directory.GetFiles(dataDirectory, "round-*.csv");
 
                             if (roundFiles.Length == 0)
