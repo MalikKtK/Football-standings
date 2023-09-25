@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FootballStandings")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04049dd9248f98a869f99445274220ab0cad5db7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+922c697711b078097ca9eb28bdf69bac20517b1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FootballStandings")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FootballStandings")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,7 @@
 HomeTeam,AwayTeam,Score,MatchDate,Stadium
-AaB,FCM,4-1,2023-09-30,Stadium 1
-EfB,FCK,0-3,2023-09-30,Stadium 2
-SIF,VB,0-2,2023-09-30,Stadium 3
-RFC,LBK,3-0,2023-09-30,Stadium 4
+FCK,FCM,4-1,2025-09-30,Stadium 1
+RFC,SIF,2-3,2025-10-01,Stadium 2
+VB,FCN,4-3,2025-10-01,Stadium 3
+HIF,BIF,4-2,2025-10-01,Stadium 4
+VIB,AGF,1-0,2025-10-01,Stadium 5
+OB,LBF,4-3,2025-10-02,Stadium 6
