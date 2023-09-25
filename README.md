@@ -9,7 +9,6 @@ Hver gang et hold vinder, får holdet 3 points, hvor uafgjort gir 1 og tabt får
 ## Indhold
 - [Instillation](#Instillation)
 - [Brug](#Brug)
-- [Configuration](#configuration)
 - [Konfiguration](#Konfiguration)
 - [Kontakt](#Kontakt)
 
