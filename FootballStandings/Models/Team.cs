@@ -12,12 +12,11 @@ public class Team
     public int GoalsAgainst { get; set; }
     public int GoalDifference => GoalsFor - GoalsAgainst;
     public int Points { get; set; }
-    public Streak CurrentStreak { get; set; } // Add a Streak property
+    public Streak CurrentStreak { get; set; }
 
-    // Parameterless constructor
     public Team()
     {
-        CurrentStreak = new Streak(); // Initialize the CurrentStreak property
+        CurrentStreak = new Streak();
     }
 
     public Team(string abbreviation, string fullName, string specialRanking)
@@ -33,7 +32,7 @@ public class Team
         GoalsFor = 0;
         GoalsAgainst = 0;
         Points = 0;
-        CurrentStreak = new Streak(); // Initialize the CurrentStreak property
+        CurrentStreak = new Streak();
     }
 
     public class Streak
