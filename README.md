@@ -10,6 +10,7 @@ Hver gang et hold vinder, får holdet 3 points, hvor uafgjort gir 1 og tabt får
 - [Instillation](#Instillation)
 - [Brug](#Brug)
 - [Konfiguration](#Konfiguration)
+- [Credits](#Credits)
 - [Kontakt](#Kontakt)
 
 ## Instillation 
@@ -35,6 +36,9 @@ Der skal huskes, at selvom der står en score i vores csv filer, er det stadig u
 ## Konfiguration
 
 Sørg for at setup.csv og teams.csv bliver loadet ind. Hvis de ikke gør, virker programmet ikke. Ellers er der ikke andre konfigurationer der er behov for, udover at huske at have NET 7
+
+## Credits
+Inde i vores projekt er der en LINKS.MD. I denne kan der blandt andet se de links på hjemmesider, vi har benyttet hjælp fra samt chatgpt samtaler omkring hjælp på fejl der har opstået undervejs.
 
 ## Kontakt
 
