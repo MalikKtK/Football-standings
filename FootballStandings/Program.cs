@@ -89,6 +89,7 @@ string teamFilePath = @"C:\Users\ebus\Desktop\C#\FootballStandings\Football-stan
 
                     case 4:
                     // Simulation af alle kampe
+                    // Test om det virker
                     Console.Write("Simulate all matches? (y/n): ");
                     string simulateAllMatches = Console.ReadLine();
 
