@@ -6,10 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Specify the data directory
         string dataDirectory = "Data";
 
-        // Load setup data from setup.csv
         string setupFileName = "setup.csv";
         string setupFilePath = Path.Combine(dataDirectory, setupFileName);
         LeagueSetup leagueSetup = LeagueSetup.ParseSetupCsv(setupFilePath);
@@ -20,7 +18,6 @@ class Program
             return;
         }
 
-        // Load team data from teams.csv
         string teamFileName = "teams.csv";
         string teamFilePath = Path.Combine(dataDirectory, teamFileName);
         List<Team> teams = FootballCsvReader.ReadCsv(teamFilePath);
@@ -31,7 +28,6 @@ class Program
             return;
         }
 
-        // Create an instance of FootballProcessor
         FootballProcessor processor = new FootballProcessor(teams, leagueSetup);
 
         bool exit = false;
@@ -50,27 +46,22 @@ class Program
                 switch (choice)
                 {
                     case 1:
-                        // Print teams and their details
                         foreach (var team in teams)
                         {
                             Console.WriteLine($"Abbreviation: {team.Abbreviation}");
-                            // ... (print other team details)
                             Console.WriteLine();
                         }
                         break;
 
                     case 2:
-                        // Implement logic to run matches based on round files
                         Console.Write("Enter the round file name (e.g., round-1.csv): ");
                         string roundFileName = Console.ReadLine();
                         string roundFilePath = Path.Combine(dataDirectory, roundFileName);
 
                         if (File.Exists(roundFilePath))
                         {
-                            // Generate random scores for matches in the round file
                             processor.GenerateRandomScores(roundFilePath);
 
-                            // Process the round results
                             processor.ProcessRoundResults(roundFilePath);
 
                             Console.WriteLine("Matches have been processed.");
@@ -82,13 +73,10 @@ class Program
                         break;
 
                     case 3:
-                        // Display current league standings
                         processor.DisplayCurrentStandings();
                         break;
 
                     case 4:
-                        // Simulation af alle kampe
-                        // Test om det virker
                         Console.Write("Simulate all matches? (y/n): ");
                         string simulateAllMatches = Console.ReadLine();
 
@@ -102,15 +90,12 @@ class Program
                             }
                             else
                             {
-                                // Sort the round files by their names to ensure processing in order
                                 Array.Sort(roundFiles);
 
                                 foreach (string currentRoundFilePath in roundFiles)
                                 {
-                                    // Generate random scores for matches in the round file
                                     processor.GenerateRandomScores(currentRoundFilePath);
 
-                                    // Process the round results
                                     processor.ProcessRoundResults(currentRoundFilePath);
 
                                     Console.WriteLine($"Matches in {Path.GetFileName(currentRoundFilePath)} have been processed.");
@@ -124,7 +109,6 @@ class Program
                         break;
 
                     case 5:
-                        // Exit the application
                         exit = true;
                         break;
 

@@ -38,7 +38,6 @@ public void PrintStandings()
     {
         string specialMarking = "";
 
-        // Add special marking for CL, EL, EC qualification
         if (team.Position <= 1)
             specialMarking = "(CL)";
         else if (team.Position <= 3)
@@ -46,7 +45,6 @@ public void PrintStandings()
         else if (team.Position <= 6)
             specialMarking = "(EC)";
 
-        // Add coloring for relegation-threatened teams
         string textColor = "white";
         if (team.Position >= teams.Count - 1)
             textColor = "red";

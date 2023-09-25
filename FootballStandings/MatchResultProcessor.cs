@@ -14,7 +14,6 @@ public class MatchResultProcessor
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
 
-            // Skip the header line
             parser.ReadLine();
 
             while (!parser.EndOfData)
@@ -30,7 +29,6 @@ public class MatchResultProcessor
                 string homeTeam = fields[0];
                 string awayTeam = fields[1];
 
-                // Split and parse the goal values
                 string[] goalValues = fields[2].Split('-');
                 if (goalValues.Length != 2 || !int.TryParse(goalValues[0], out int homeTeamGoals) || !int.TryParse(goalValues[1], out int awayTeamGoals))
                 {
@@ -40,7 +38,6 @@ public class MatchResultProcessor
 
                 string matchDate = fields[4];
 
-                // You can add stadium information if needed
 
                 MatchResult matchResult = new MatchResult(homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, matchDate, string.Empty);
                 matchResults.Add(matchResult);

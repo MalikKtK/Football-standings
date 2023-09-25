@@ -13,8 +13,6 @@ public class FootballCsvReader
         {
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
-
-            // Skip the header line
             parser.ReadLine();
 
             while (!parser.EndOfData)
@@ -43,7 +41,6 @@ public class FootballCsvReader
                     team.GoalsAgainst = int.Parse(fields[9]);
                     team.Points = int.Parse(fields[10]);
 
-                    // Parse the CurrentStreak property correctly
                   string streak = fields[11];
 if (!string.IsNullOrEmpty(streak) && streak.Length >= 2)
 {
@@ -66,9 +63,7 @@ if (!string.IsNullOrEmpty(streak) && streak.Length >= 2)
 
                     else
                     {
-                        // Handle the case where the streak value is not in the expected format
-                        // You can set a default streak or handle it as needed.
-                        team.CurrentStreak = new Team.Streak(); // Default streak with 0 wins, draws, and losses
+                        team.CurrentStreak = new Team.Streak();
                     }
 
                     teams.Add(team);

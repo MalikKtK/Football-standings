@@ -21,7 +21,6 @@ public class LeagueSetup
         RelegateToLowerLeague = relegateToLowerLeague;
     }
 
-    // Add a method to parse setup.csv
     public static LeagueSetup ParseSetupCsv(string filePath)
     {
         try
