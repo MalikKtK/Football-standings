@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSn4UJpKhuYq9X8aziMwnnmoxFPmBxlQ9aWffbhu5CHTxpsiK5ebVZFjqFQ/Wa8lvcux7n572COKca7xXLv/pg==",
+  "dgSpecHash": "ImJecI0flXrpwHGjTzJaEVZOjLEtYx5PUqqcgCeSO0np8oP9Fit7N829WPRSwmS7A6PmSuJjXz/BFBt+CC/DGw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\ebus\\Desktop\\C#\\FootballStandings\\Football-standings\\FootballStandings\\FootballStandings.csproj",
+  "projectFilePath": "C:\\Users\\ebus\\Desktop\\C#\\FootballStandings\\Football-standings\\FootballStandings\\FootballStandings.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ebus\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\ebus\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512",

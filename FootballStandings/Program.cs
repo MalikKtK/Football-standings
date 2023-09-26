@@ -45,7 +45,7 @@ class Program
             Console.WriteLine("1. Print Teams");
             Console.WriteLine("2. Run Matches");
             Console.WriteLine("3. Display Current League Standings");
-            Console.WriteLine("4. Simulate all matches");
+            Console.WriteLine("4. Simulate All Matches");
             Console.WriteLine("5. Exit");
             Console.Write("Enter your choice: ");
 
