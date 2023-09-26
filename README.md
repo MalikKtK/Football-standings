@@ -1,44 +1,48 @@
-# Football Standing
+# Football Standings
 
-Dette er vores første Obligatoriske projekt for C#. Vi har et dansk superliga, som indeholder 12 hold. Hvert år bliver der spillet cirka 22 kampe pr. hold (2 kampe mod alle hold).
+Dette er vores første obligatoriske projekt for C#. Vi har en dansk Superliga, som indeholder 12 hold. Hver sæson spilles der cirka 22 kampe pr. hold (2 kampe per modstander - 1 ude- og hjemmekamp).
 
-I slutningen af sæsonnen vil det være det hold med mest points, der både vinder supaligaen og videre til championsleague. Derefter er de to næste hold i tabellen videre til El, som står for Europa League og derefter er de tre næste kvalificeret til Europa Cup. De tre sidste hold i tabellen er til nedrykning fra super ligaen. 
+I slutningen af sæsonen vil det hold med flest point både vinde Superligaen og kvalificere sig til Champions League. Derefter går de næste to hold på ranglisten videre til Europa League, og de efterfølgende tre kvalificerer sig til Conference League. De tre pladser i tabel-stillingen rykker ned fra Superligaen.
 
-Hver gang et hold vinder, får holdet 3 points, hvor uafgjort gir 1 og tabt får man ikke point. 
+Hver gang et hold vinder, optjener holdet 3 point, mens uafgjort giver 1 point, og ved tab opnår man ingen point.
 
 ## Indhold
-- [Instillation](#Instillation)
+
+- [Installation](#Instillation)
 - [Brug](#Brug)
 - [Konfiguration](#Konfiguration)
 - [Credits](#Credits)
 - [Kontakt](#Kontakt)
 
-## Instillation 
+## Installation
 
-Du skal have NET 7 for at køre programmet samt en enhed der har et software til at write, compile, and run og C#/.NET application. Der anbefaldes at der bliver brugt Visual Studio Code.
+Du skal have .NET 7 for at køre programmet samt en enhed, der har software til at skrive, kompilere og køre en C#/.NET-applikation. Det anbefales at bruge Visual Studio Code.
 
 ## Brug
 
-Du skal åbne en terminal op, og til at starte med skrive følgende:
- - dotnet clean (Til at fjerne caches)
- - dotnet build (Til at bygge projektet op)
- - dotnet run (Til at starte projektet op)
+Du skal åbne en terminal og indtaste følgende for at starte:
 
- Herefter har du 5 valgmuligheder.
+    dotnet clean (For at fjerne cache)
+    dotnet build (For at bygge projektet)
+    dotnet run (For at starte projektet)
+
+Derefter har du 5 valgmuligheder:
+
 1. Print Teams (Printe holdene ud)
-2. Run Matches (Køre kampene manualt (eksempelvis round-01.csv))
+2. Run Matches (Spiller kampe manuelt (eksempelvis kan bruger-input være: round-01.csv))
 3. Display Current League Standings (Printe tabellen af ligaen ud)
-4. Simulate all matches  (Simulaterer alle vores kampe, så den færddigøre hele sæsonnen.)
+4. Simulate All Matches (Simulation af alle kampe. Dette resultere i, at alle kampe færdigspilles og så kan man derefter se den endelige tabel-stilling)
 5. Exit (Afslutter programmet)
 
-Der skal huskes, at selvom der står en score i vores csv filer, er det stadig udgivet randomt. Dvs. hver gang du kører manualt en kamp eller en hel sæson, vil resultatet altid være randomt. 
+Husk, at selvom der står en score i vores CSV-filer, er resultatet stadig tilfældigt. Dvs. hver gang du manuelt spiller en kamp eller en hel sæson, vil resultatet altid være tilfældigt.
 
 ## Konfiguration
 
-Sørg for at setup.csv og teams.csv bliver loadet ind. Hvis de ikke gør, virker programmet ikke. Ellers er der ikke andre konfigurationer der er behov for, udover at huske at have NET 7
+Sørg for at indlæse setup.csv og teams.csv. Hvis de ikke indlæses, fungerer programmet ikke. Ellers er der ingen yderligere konfigurationer, der er nødvendige, udover at have .NET 7 installeret.
 
 ## Credits
-Inde i vores projekt er der en LINKS.MD. I denne kan der blandt andet se de links på hjemmesider, vi har benyttet hjælp fra samt chatgpt samtaler omkring hjælp på fejl der har opstået undervejs.
+
+I vores projekt er der en LINKS.MD-fil. Her kan du finde links til de hjælpemidler vi har brugt, samt chats med ChatGPT om fejl, der er opstået undervejs.
 
 ## Kontakt
 
