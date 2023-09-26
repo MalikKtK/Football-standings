@@ -19,6 +19,7 @@ public class Team
         CurrentStreak = new Streak();
     }
 
+    //this constructor is used to create a team
     public Team(string abbreviation, string fullName, string specialRanking)
     {
         Abbreviation = abbreviation;

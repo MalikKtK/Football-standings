@@ -62,7 +62,7 @@ public class LeagueStandings
             if (team.Position >= teams.Count - 1)
                 textColor = "red";
 
-            //Print team information with formatting.
+            //Print team information with formatting
             Console.WriteLine($"<color={textColor}>{team.Position,-5} {specialMarking} {team.FullName,-25} {team.Points,-10} {team.GamesPlayed,-10} {team.GamesWon,-10} {team.GamesDrawn,-10} {team.GamesLost,-10} {team.GoalsFor,-10} {team.GoalsAgainst,-10} {team.GoalDifference,-10} {team.CurrentStreak,-10}</color>");
         }
     }
